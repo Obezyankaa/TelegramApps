@@ -5,7 +5,7 @@ import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
 // this manifest is used temporarily for development purposes
 const manifestUrl =
-  "https://Obezyankaa.github.io/telegramapps/tonconnect-manifest.json";
+  "https://Obezyankaa.github.io/telegram-apps/tonconnect-manifest.json";
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
