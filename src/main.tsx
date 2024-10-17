@@ -7,9 +7,11 @@ import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import "./i18n";
 
 // this manifest is used temporarily for development purposes
-const manifestUrl =
-  "https://my-gituser.github.io/telegram-apps/tonconnect-manifest.json";
+// const manifestUrl =
+//   "https://my-gituser.github.io/telegram-apps/tonconnect-manifest.json";
 
+  const manifestUrl =
+    "https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json";
 const router = createBrowserRouter([
   {
     path: "/",
