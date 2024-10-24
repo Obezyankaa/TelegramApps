@@ -1,4 +1,10 @@
 {
   "authorization": "Authorization",
-  "SelectLanguage": "Select a language"
+  "SelectLanguage": "Select a language",
+  "sliderTextDesc": "This is the new TOP Wallet & Shopping",
+  "sliderTitleSafe": "Safe",
+  "sliderTextSafe": "A reliable smart contract, Touch/Face ID, PIN code and all this in a decentralized blockchain network",
+  "sliderTitleQuick": "Quick",
+  "sliderTextQuick": "Thanks to the unique TON architecture, transactions are sent in seconds",
+  "sliderCreateBtn": "Create Wallet"
 }

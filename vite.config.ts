@@ -8,3 +8,4 @@ export default defineConfig({
   // base: "/telegram-apps",
   server: { open: true },
 });
+

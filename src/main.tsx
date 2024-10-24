@@ -6,7 +6,6 @@ import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
 import "./i18n";
 
-// this manifest is used temporarily for development purposes
 // const manifestUrl =
 //   "https://my-gituser.github.io/telegram-apps/tonconnect-manifest.json";
 

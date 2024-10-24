@@ -1,0 +1,12 @@
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.3); /* Цвет неактивных точек */
+  border-radius: 1rem;
+  margin: 0 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(67, 150, 227); /* Цвет активной точки */
+  transform: scale(1); /* Увеличение активной точки */
+}
