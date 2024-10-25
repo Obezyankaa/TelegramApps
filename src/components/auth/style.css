@@ -7,6 +7,6 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: rgb(67, 150, 227); /* Цвет активной точки */
+  background-color: var(--text); /* Цвет активной точки */
   transform: scale(1); /* Увеличение активной точки */
 }

@@ -6,5 +6,6 @@
   "sliderTextSafe": "A reliable smart contract, Touch/Face ID, PIN code and all this in a decentralized blockchain network",
   "sliderTitleQuick": "Quick",
   "sliderTextQuick": "Thanks to the unique TON architecture, transactions are sent in seconds",
-  "sliderCreateBtn": "Create Wallet"
+  "createBtn": "Create Wallet",
+  "openBtn": "I already have a wallet"
 }

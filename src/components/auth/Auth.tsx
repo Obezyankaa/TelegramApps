@@ -1,4 +1,4 @@
-import { TonConnectButton } from "@tonconnect/ui-react";
+import { useTonConnectModal } from "@tonconnect/ui-react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import styles from "./Auth.module.scss";
@@ -14,6 +14,7 @@ import './style.css';
 
 export default function Auth() {
   const { t } = useTranslation();
+   const { open } = useTonConnectModal();
 
   const currentLanguage = i18next.language;
   const changeLanguage = (lang: string) => {
@@ -83,12 +84,17 @@ export default function Auth() {
       </Swiper>
       <div className={styles["auth-swiper_pagination"]}></div>
       <div className={styles["auth-btn_container"]}>
-        <TonConnectButton />
         <button
           className={styles["auth-btn_container-create_btn"]}
           onClick={redirectToCreateWallet}
         >
-          {t("sliderCreateBtn")}
+          {t("createBtn")}
+        </button>
+        <button
+          className={styles["auth-btn_container-open_btn"]}
+          onClick={open}
+        >
+          {t("openBtn")}
         </button>
       </div>
     </div>
