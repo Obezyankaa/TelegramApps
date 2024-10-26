@@ -1,0 +1,33 @@
+@mixin block-ui {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    background-color: var(--const-background-dark);
+    padding: 1rem;
+
+    &__avatar {
+        @include block-ui;
+        background-color: rgb(130, 192, 252)
+    }
+
+    &__qr-code {
+        @include block-ui;
+        background-color: var(--const-background-color);
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &__version-wallet {
+        background-color: var(--const-background-color);
+        border-radius: 2rem;
+    }
+}

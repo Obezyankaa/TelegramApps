@@ -80,6 +80,9 @@ select {
   --const-violet: rgb(85,76,218);
   --const-white: rgb(255, 255, 255);
   --background-color: #f9f9f9;
+
+  --const-background-dark: #000000;
+  --const-background-color: #242424;
 }
 
 /* Темная тема (при использовании prefers-color-scheme: dark) */
