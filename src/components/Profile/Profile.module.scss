@@ -8,6 +8,8 @@
 }
 
 .profile {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--const-background-dark);
     padding: 1rem;
 
@@ -26,8 +28,13 @@
         }
     }
 
+    &__balance {
+        color: white;
+    }
+
     &__version-wallet {
         background-color: var(--const-background-color);
         border-radius: 2rem;
+
     }
 }
