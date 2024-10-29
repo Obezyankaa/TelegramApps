@@ -10,17 +10,19 @@
 .profile {
     display: flex;
     justify-content: space-between;
-    background-color: var(--const-background-dark);
+    background-color: var(--background);
     padding: 1rem;
+
 
     &__avatar {
         @include block-ui;
-        background-color: rgb(130, 192, 252)
+        background-color: var(--background-color);
+        position: relative;
     }
 
     &__qr-code {
         @include block-ui;
-        background-color: var(--const-background-color);
+        background-color: var(--background-color);
 
         img {
             width: 25px;
@@ -29,12 +31,190 @@
     }
 
     &__balance {
-        color: white;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text);
+    }
+
+    &__address {
+        font-size: 12px;
+        color: var(--muted-text);
+    }
+
+    &__modal {
+        background-color: var(--background-color);
+        border-radius: 4px;
+        width: 20px;
+        height: 20px;
+    }
+
+    @mixin status {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    &__active {
+        @include status();
+        background-color: #39cc83;
+    }
+
+    &__offline {
+        @include status();
+        background-color: #ff4766;
+    }
+}
+
+.modal-info-wallet {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 1rem;
+    }
+
+    @mixin styleInfoWallet($background: var(--background), $box-shadow: var(--box-shadow), $padding: 1rem 1.5rem) {
+        display: flex;
+        gap: 8px;
+        background-color: $background;
+        border-radius: 1rem;
+        padding: $padding;
+        box-shadow: $box-shadow;
+
+        svg {
+            width: 35px;
+            height: 35px;
+            flex-shrink: 0;
+        }
+    }
+
+    @mixin walletText($font-size: 14px, $color: var(--text)) {
+        font-size: $font-size;
+        color: $color;
     }
 
     &__version-wallet {
-        background-color: var(--const-background-color);
-        border-radius: 2rem;
+        @include styleInfoWallet();
 
+        &__title {
+            @include walletText();
+        }
+
+        &__text {
+            @include walletText($color: var(--muted-text));
+        }
+    }
+
+
+    &__address-wallet {
+        @include styleInfoWallet();
+
+        &__title {
+            @include walletText();
+        }
+
+        &__text {
+            @include walletText($color: var(--muted-text));
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный фон */
+    z-index: 1;
+    /* Поверх всех элементов */
+}
+
+.all-info-wallet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-color: var(--background-color);
+    transform: translateY(100%);
+    animation: slideUp 0.5s ease-in-out forwards;
+    z-index: 2;
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для закрытия */
+.slide-down {
+    animation: slideDown 0.5s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background);
+    color: var(--text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeInOut 3s ease forwards;
+    z-index: 999;
+
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+    }
+
+    p {
+        white-space: nowrap;
     }
 }

@@ -7,5 +7,8 @@
   "sliderTitleQuick": "Quick",
   "sliderTextQuick": "Thanks to the unique TON architecture, transactions are sent in seconds",
   "createBtn": "Create Wallet",
-  "openBtn": "I already have a wallet"
+  "openBtn": "I already have a wallet",
+  "copyWallet": "The wallet address has been copied",
+  "versionWallet": "Contract type",
+  "publicAddress": "Public Address"
 }
