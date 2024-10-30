@@ -1,0 +1,15 @@
+{
+  "authorization": "Авторизация",
+  "SelectLanguage": "Выберите язык",
+  "sliderTextDesc": "Это новый TON Wallet & Shop",
+  "sliderTitleSafe": "Безопасный",
+  "sliderTextSafe": "Надежный смарт-контракт, Touch/Face ID, пин-код и все это в децентрализованной блокчейн сети",
+  "sliderTitleQuick": "Быстрый",
+  "sliderTextQuick": "Благодаря уникальной архитектуре TON транзакции отправляются за считанные секунды",
+  "createBtn": "Создать кошелёк",
+  "openBtn": "У меня уже есть кошелек",
+  "copyWallet": "Адрес кошелька скопирован",
+  "versionWallet": "Тип контракта",
+  "publicAddress": "Публик Адрес"
+}
+
