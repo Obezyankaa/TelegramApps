@@ -98,7 +98,7 @@
 
         &-open_btn {
             background-color: var(--background-color);
-            color: var(--const-violet);
+            color: var(--text);
             font-size: 1rem;
             font-weight: 500;
             width: 90%;
@@ -107,8 +107,8 @@
         }
 
         &-create_btn {
-            background-color: var(--const-violet);
-            color: var(--const-white);
+            background-color: var(--background-color);
+            color: var(--text);
             font-size: 1rem;
             font-weight: 500;
             width: 90%;

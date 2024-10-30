@@ -10,6 +10,7 @@
   "openBtn": "У меня уже есть кошелек",
   "copyWallet": "Адрес кошелька скопирован",
   "versionWallet": "Тип контракта",
-  "publicAddress": "Публик Адрес"
+  "publicAddress": "Публик Адрес",
+  "balance": "Баланс"
 }
 

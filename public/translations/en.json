@@ -10,5 +10,6 @@
   "openBtn": "I already have a wallet",
   "copyWallet": "The wallet address has been copied",
   "versionWallet": "Contract type",
-  "publicAddress": "Public Address"
+  "publicAddress": "Public Address",
+  "balance": "Balance"
 }

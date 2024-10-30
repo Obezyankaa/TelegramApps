@@ -79,6 +79,7 @@
 
     @mixin styleInfoWallet($background: var(--background), $box-shadow: var(--box-shadow), $padding: 1rem 1.5rem) {
         display: flex;
+        align-items: center;
         gap: 8px;
         background-color: $background;
         border-radius: 1rem;

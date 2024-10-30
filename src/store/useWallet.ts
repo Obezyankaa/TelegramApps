@@ -6,7 +6,8 @@ import axios from "axios";
 const url = "https://tonapi.io/v2/accounts/";
 
 interface BalanceType {
-  balance: number;
+  balanceTon: string;
+  bacanceUsd: string;
   wallet: string;
   address: string;
   accounts_bulk: string[];
@@ -17,7 +18,8 @@ const key = import.meta.env.VITE_TON_API_KEY;
 
 const useWallet = create<BalanceType>()(
   devtools((set, get) => ({
-    balance: 0,
+    balanceTon: "",
+    bacanceUsd: "",
     wallet: "",
     address: "",
     accounts_bulk: [],
@@ -71,7 +73,24 @@ const useWallet = create<BalanceType>()(
         );
         if (response.status === 200) {
           const data = response.data;
-          set({ accounts_bulk: data.accounts }, false, "wallet/setAccountsBulk");
+          const balance: number = Number(data.accounts[0].balance); // Преобразуем к числу
+          const tonToUsdRate: number = Number(
+            data.accounts[0].currencies_balance.USD
+          ); // Преобразуем к числу
+
+          // Переводим баланс в TON
+          const tonBalance = (balance / 1e9).toFixed(3); // Конвертируем в TON и округляем до 3 знаков
+          // Переводим баланс в USD
+          const usdBalance = (parseFloat(tonBalance) * tonToUsdRate).toFixed(2); // Вычисляем эквивалент в долларах
+          // set({ balance: data.balance }, false, "walelt/balance");
+          set({ balanceTon: tonBalance }, false, "wallet/tonBalance");
+          set({ bacanceUsd: usdBalance }, false, "wallet/usdBalance");
+
+          set(
+            { accounts_bulk: data.accounts },
+            false,
+            "wallet/setAccountsBulk"
+          );
         }
       } catch (error) {
         console.log("Ошибка в функции getAccounts:", error);
