@@ -4,6 +4,7 @@ import { devtools } from "zustand/middleware";
 import axios from "axios";
 
 const url = "https://tonapi.io/v2/accounts/";
+const key = import.meta.env.VITE_TON_API_KEY;
 
 interface BalanceType {
   balanceTon: string;
@@ -14,7 +15,6 @@ interface BalanceType {
   getWallet: (address: string, callback?: () => void) => Promise<void>;
   getAccounts: () => Promise<void>;
 }
-const key = import.meta.env.VITE_TON_API_KEY;
 
 const useWallet = create<BalanceType>()(
   devtools((set, get) => ({

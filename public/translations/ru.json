@@ -11,6 +11,8 @@
   "copyWallet": "Адрес кошелька скопирован",
   "versionWallet": "Тип контракта",
   "publicAddress": "Публик Адрес",
-  "balance": "Баланс"
+  "balance": "Баланс",
+  "tokens": "Токены",
+  "staking": "Стейкинг"
 }
 

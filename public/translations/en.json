@@ -11,5 +11,7 @@
   "copyWallet": "The wallet address has been copied",
   "versionWallet": "Contract type",
   "publicAddress": "Public Address",
-  "balance": "Balance"
+  "balance": "Balance",
+  "tokens": "Tokens",
+  "staking": "Staking"
 }

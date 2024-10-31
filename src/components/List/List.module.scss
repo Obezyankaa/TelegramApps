@@ -1,0 +1,74 @@
+.jettons-section {
+    padding: 2rem 1rem;
+}
+
+@mixin title {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.jettons-tokens {
+    padding-bottom: 2rem;
+    &__title {
+        @include title();
+        padding-bottom: 1rem
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--background-color);
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &-img {
+            width: 30px;
+            height: 30px;
+        }
+
+        &-title {
+            color: var(--text);
+        }
+
+        &-sub {
+            color: var(--muted-text);
+            font-size: 12px;
+        }
+
+        &-balance {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            &-usdBlock {
+                display: flex;
+                gap: 5px;
+            }
+
+            &-usd {
+                color: var(--muted-text);
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.jettons-staking {
+    &__title {
+        @include title()
+    }
+}
