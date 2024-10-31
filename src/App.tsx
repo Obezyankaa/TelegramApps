@@ -1,7 +1,7 @@
 import { useTonAddress } from "@tonconnect/ui-react";
-import HomePage from "./pages/HomePage";
 import Auth from "./components/auth/Auth";
-import "./App.css";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 import Disconect from "./Disconect";
 
 export default function App() {
@@ -11,8 +11,9 @@ export default function App() {
     <>
       {userAddress ? (
         <>
-          <HomePage />
           <Disconect />
+          <Outlet />
+          <NavBar />
         </>
       ) : (
         <Auth />
