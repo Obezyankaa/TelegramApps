@@ -79,7 +79,7 @@ const useWallet = create<BalanceType>()(
           ); // Преобразуем к числу
 
           // Переводим баланс в TON
-          const tonBalance = (balance / 1e9).toFixed(3); // Конвертируем в TON и округляем до 3 знаков
+          const tonBalance = (balance / 1e9).toFixed(2); // Конвертируем в TON и округляем до 3 знаков
           // Переводим баланс в USD
           const usdBalance = (parseFloat(tonBalance) * tonToUsdRate).toFixed(2); // Вычисляем эквивалент в долларах
           // set({ balance: data.balance }, false, "walelt/balance");

@@ -6,13 +6,13 @@
     font-size: 22px;
     font-weight: 500;
     color: var(--text);
+    padding-bottom: 1rem
 }
 
 .jettons-tokens {
     padding-bottom: 2rem;
     &__title {
         @include title();
-        padding-bottom: 1rem
     }
 
     &__item {

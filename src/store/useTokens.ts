@@ -47,6 +47,7 @@ interface JettonInfo {
 
 interface JettonsStore {
   jettonsData: Balance[];
+  stakingData: Balance[];
   isLoaded: boolean;
   getJettons: (address: string, callback?: () => void) => Promise<void>;
 }
@@ -55,6 +56,7 @@ interface JettonsStore {
 const useTokens = create<JettonsStore>()(
   devtools((set, get) => ({
     jettonsData: [],
+    stakingData: [], // Новое состояние для стейкинговых токенов
     isLoaded: false,
     getJettons: async (address, callback) => {
       const { isLoaded } = get();
@@ -77,14 +79,11 @@ const useTokens = create<JettonsStore>()(
           const jettons = response.data;
 
           const formattedJettonsData = jettons.balances.map((el: Balance) => {
-            const balance = Number(el.balance); // Преобразуем баланс к числу
-            const tonToUsdRate = Number(el.price.prices.USD); // Преобразуем цену к числу
-            const decimals = el.jetton.decimals; // Получаем decimals для токена
+            const balance = Number(el.balance);
+            const tonToUsdRate = Number(el.price.prices.USD);
+            const decimals = el.jetton.decimals;
 
-            // Конвертируем баланс в TON с учетом decimals и округляем до 3 знаков
             const tonBalance = (balance / Math.pow(10, decimals)).toFixed(2);
-
-            // Конвертируем баланс в USD и округляем до 2 знаков
             const usdBalance = (parseFloat(tonBalance) * tonToUsdRate).toFixed(
               2
             );
@@ -96,8 +95,18 @@ const useTokens = create<JettonsStore>()(
             };
           });
 
+          // Разделение токенов на обычные и стейкинговые
+          const stakingData = formattedJettonsData.filter((token: Balance) =>
+            token.jetton.name.toLowerCase().includes("stake")
+          );
+
+          const jettonsData = formattedJettonsData.filter(
+            (token: Balance) =>
+              !token.jetton.name.toLowerCase().includes("stake")
+          );
+
           set(
-            { jettonsData: formattedJettonsData, isLoaded: true },
+            { jettonsData, stakingData, isLoaded: true },
             false,
             "jettonsData/formatted"
           );
@@ -111,6 +120,5 @@ const useTokens = create<JettonsStore>()(
     },
   }))
 );
-
 
 export default useTokens;
