@@ -6,5 +6,5 @@ export default function Disconect() {
         tonConnectUI.disconnect();
       };
 
-    return <button style={{ backgroundColor: "blue", color: 'white', position: 'absolute', bottom: '5%', left: '5%'}} onClick={handleDisconnect}>Disconnect wallet</button>;
+    return <button style={{ backgroundColor: "blue", color: 'white', position: 'absolute', bottom: '25%', left: '5%'}} onClick={handleDisconnect}>Disconnect wallet</button>;
 }
