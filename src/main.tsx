@@ -8,6 +8,7 @@ import "./i18n";
 import Settings from "./settings/Settings";
 import HomePage from "./pages/HomePage";
 import Shop from "./components/shop/Shop";
+import NotFound from "./ui/NotFound";
 
 // const manifestUrl =
 //   "https://my-gituser.github.io/telegram-apps/tonconnect-manifest.json";
@@ -20,18 +21,19 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/", 
+        path: "/",
         element: <HomePage />,
       },
       {
         path: "/shop",
-        element: <Shop />
+        element: <Shop />,
       },
       {
         path: "/setting",
         element: <Settings />,
       },
     ],
+    errorElement: <NotFound />,
   },
 ]);
 
