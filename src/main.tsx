@@ -9,6 +9,7 @@ import Settings from "./settings/Settings";
 import HomePage from "./pages/HomePage";
 import Shop from "./components/shop/Shop";
 import NotFound from "./ui/NotFound";
+import History from "./components/History/History";
 
 // const manifestUrl =
 //   "https://my-gituser.github.io/telegram-apps/tonconnect-manifest.json";
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/history",
+        element: <History />,
       },
       {
         path: "/setting",

@@ -13,5 +13,6 @@
   "publicAddress": "Public Address",
   "balance": "Balance",
   "tokens": "Tokens",
-  "staking": "Staking"
+  "staking": "Staking",
+  "nft": "Collectibles"
 }

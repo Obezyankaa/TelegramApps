@@ -3,18 +3,21 @@ import styles from "./List.module.scss";
 import { useEffect } from "react";
 import useTokens from "../../store/useTokens";
 import { useTranslation } from "react-i18next";
+import useNft from "../../store/useNft";
 
 export default function List() {
   const { t } = useTranslation();
   const userFriendlyAddress = useTonAddress();
 
   const { jettonsData, stakingData, getJettons } = useTokens();
+  const {nftData, getNft } = useNft();
 
   useEffect(() => {
     if (userFriendlyAddress) {
       getJettons(userFriendlyAddress);
+      getNft(userFriendlyAddress);
     }
-  }, [userFriendlyAddress, getJettons]);
+  }, [userFriendlyAddress, getJettons, getNft]);
 
   return (
     <section className={styles["jettons-section"]}>
@@ -51,13 +54,13 @@ export default function List() {
                   <span
                     style={{
                       fontSize: "12px",
-                      color: el.price.diff_24h.USD.includes("−")
+                      color: el?.price?.diff_24h?.USD.includes("−")
                         ? "red"
                         : "green",
                     }}
                   >
-                    {el?.price?.diff_24h.USD !== "0.00%"
-                      ? el.price.diff_24h.USD
+                    {el?.price?.diff_24h?.USD !== "0.00%"
+                      ? el?.price?.diff_24h?.USD
                       : null}
                   </span>
                 </div>
@@ -66,7 +69,7 @@ export default function List() {
           ))}
         </div>
       </div>
-      <div>
+      <div className={styles["jettons-tokens"]}>
         <h2 className={styles["jettons-staking__title"]}>{t("staking")}</h2>
         <div className={styles["jettons-tokens__item"]}>
           {stakingData?.map((el, index) => (
@@ -99,13 +102,13 @@ export default function List() {
                   <span
                     style={{
                       fontSize: "12px",
-                      color: el.price.diff_24h.USD.includes("−")
+                      color: el?.price?.diff24h?.USD.includes("−")
                         ? "red"
                         : "green",
                     }}
                   >
-                    {el?.price?.diff_24h.USD !== "0.00%"
-                      ? el.price.diff_24h.USD
+                    {el?.price?.diff24h?.USD !== "0.00%"
+                      ? el?.price?.diff24h?.USD
                       : null}
                   </span>
                 </div>
@@ -114,6 +117,7 @@ export default function List() {
           ))}
         </div>
       </div>
+      <h2 className={styles["jettons-staking__title"]}>{t("nft")}</h2>
     </section>
   );
 }
