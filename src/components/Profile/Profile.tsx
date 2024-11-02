@@ -9,7 +9,7 @@ export default function Profile() {
   const { t } = useTranslation();
   const userFriendlyAddress = useTonAddress();
   const isConnectionRestored = useIsConnectionRestored();
-  const { wallet, getWallet, getAccounts } = useBalance();
+  const { wallet, getWallet } = useBalance();
 
   const [showCopyNotification, setShowCopyNotification] = useState(false);
   const [openModalInfoWallet, setOpenModalInfoWallet] = useState(false);
@@ -46,9 +46,9 @@ export default function Profile() {
   // Загружаем баланс при наличии адреса
   useEffect(() => {
     if (userFriendlyAddress) {
-      getWallet(userFriendlyAddress, getAccounts);
+      getWallet(userFriendlyAddress);
     }
-  }, [userFriendlyAddress, getWallet, getAccounts]);
+  }, [userFriendlyAddress, getWallet]);
 
   return (
     <>

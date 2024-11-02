@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { JettonBalance, TokenRates } from "@ton-api/client";
+import { JettonBalance, TokenRates, } from "@ton-api/client";
 import { Address } from "@ton/core";
 import ta from "../api/tonapi";
 
@@ -43,14 +43,6 @@ const useTokens = create<JettonsStore>()(
             supported_extensions: ["custom_payload"], // Укажите расширения
           }
         );
-        // const response = await axios.get(
-        //   `${url}/${address}/jettons?currencies=ton,usd&supported_extensions=custom_payload`,
-        //   {
-        //     headers: {
-        //       Authorization: `Bearer ${key}`,
-        //     },
-        //   }
-        // );
         const jettons = response;
 
         const formattedJettonsData = jettons?.balances.map(
