@@ -10,7 +10,7 @@ export default function List() {
   const userFriendlyAddress = useTonAddress();
 
   const { jettonsData, stakingData, getJettons } = useTokens();
-  const {nftData, getNft } = useNft();
+  const { nftData, getNft } = useNft();
 
   useEffect(() => {
     if (userFriendlyAddress) {
@@ -18,6 +18,15 @@ export default function List() {
       getNft(userFriendlyAddress);
     }
   }, [userFriendlyAddress, getJettons, getNft]);
+
+  // Фильтруем NFT, которые нужно отобразить
+  const filteredNftData =
+    nftData[0]?.nftItems?.filter(
+      (nft) => nft.verified && nft.trust !== "blacklist" && !nft?.owner?.is_scam
+    ) || [];
+  
+console.log(filteredNftData, '👈👈 filteredNftData');
+  console.log(nftData, "👈👈 nftData");
 
   return (
     <section className={styles["jettons-section"]}>
@@ -118,6 +127,34 @@ export default function List() {
         </div>
       </div>
       <h2 className={styles["jettons-staking__title"]}>{t("nft")}</h2>
+      <div className={styles["nft-list"]}>
+        {filteredNftData.length > 0 ? (
+          filteredNftData.map((nft, index) => (
+            <div key={index} className={styles["nft-list__item"]}>
+              <img
+                src={nft.metadata.image}
+                alt={nft.metadata.name}
+                className={styles["nft-list__image"]}
+              />
+              <h3 className={styles["nft-list__name"]}>{nft.metadata.name}</h3>
+              {/* <p className={styles["nft-description"]}>
+                {nft.metadata.description}
+              </p> */}
+              {/* Отображение атрибутов NFT */}
+              {/* <div className={styles["nft-attributes"]}>
+                {nft.metadata.attributes?.map((attr, attrIndex) => (
+                  <div key={attrIndex} className={styles["nft-attribute"]}>
+                    <strong>{attr.trait_type}: </strong>
+                    {attr.value}
+                  </div>
+                ))}
+              </div> */}
+            </div>
+          ))
+        ) : (
+          <p>{t("no_nfts")}</p>
+        )}
+      </div>
     </section>
   );
 }

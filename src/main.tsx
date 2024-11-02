@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import Shop from "./components/shop/Shop";
 import NotFound from "./ui/NotFound";
 import History from "./components/History/History";
+import NftDetails from "./components/NftDetails/NftDEtails";
 
 // const manifestUrl =
 //   "https://my-gituser.github.io/telegram-apps/tonconnect-manifest.json";
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/setting",
         element: <Settings />,
+      },
+      {
+        path: "NftDetails/:nftId",
+        element: <NftDetails />,
       },
     ],
     errorElement: <NotFound />,

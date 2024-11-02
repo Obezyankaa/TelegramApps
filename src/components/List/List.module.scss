@@ -11,6 +11,7 @@
 
 .jettons-tokens {
     padding-bottom: 2rem;
+
     &__title {
         @include title();
     }
@@ -70,5 +71,30 @@
 .jettons-staking {
     &__title {
         @include title()
+    }
+}
+
+.nft-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+
+    &__item {
+        width: calc(50% - 2px);
+        height: auto;
+        padding: 6px;
+    }
+
+    &__image {
+        width: 100%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    &__name {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 0.6rem;
+        background-color: var(--background-color);
     }
 }
