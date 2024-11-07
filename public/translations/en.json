@@ -14,5 +14,11 @@
   "balance": "Balance",
   "tokens": "Tokens",
   "staking": "Staking",
-  "nft": "Collectibles"
+  "nft": "Collectibles",
+  "historyTitle": "History",
+  "storeTitle": "Store",
+  "settingTitle": "Settings",
+  "language": "Language",
+  "exitWallet": "Exit Wallet",
+  "soon": "Soon"
 }

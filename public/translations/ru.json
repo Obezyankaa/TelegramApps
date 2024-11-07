@@ -14,6 +14,12 @@
   "balance": "Баланс",
   "tokens": "Токены",
   "staking": "Стейкинг",
-  "nft": "Коллекции"
+  "nft": "Коллекции",
+  "historyTitle": "История",
+  "storeTitle": "Магазин",
+  "settingTitle": "Настройки",
+  "language": "Язык",
+  "exitWallet": "Выйти из кошелька",
+  "soon": "Скоро"
 }
 

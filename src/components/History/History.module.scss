@@ -1,0 +1,23 @@
+.history {
+    padding: 1rem;
+}
+
+.transaction {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-date {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &-item {
+        display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--background-color);
+            padding: 1rem;
+            border-radius: 1rem;
+    }
+}

@@ -2,7 +2,6 @@ import { useTonAddress } from "@tonconnect/ui-react";
 import Auth from "./components/auth/Auth";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import Disconect from "./Disconect";
 
 export default function App() {
   const userAddress = useTonAddress(); // Получаем адрес пользователя
@@ -11,7 +10,6 @@ export default function App() {
     <>
       {userAddress ? (
         <>
-          <Disconect />
           <Outlet />
           <NavBar />
         </>

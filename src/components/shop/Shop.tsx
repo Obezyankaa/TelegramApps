@@ -1,6 +1,13 @@
-import styles from './Shop.module.scss';
+import { useTranslation } from 'react-i18next';
+import Title from '../../ui/Title';
+import Countdown from './Countdown';
 export default function Shop() {
+  const { t } = useTranslation();
+
   return (
-    <div>Shop</div>
+    <section style={{padding: '1rem'}}>
+      <Title title={t('storeTitle')} />
+      <Countdown />
+    </section>
   )
 }

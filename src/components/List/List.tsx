@@ -20,13 +20,14 @@ export default function List() {
   }, [userFriendlyAddress, getJettons, getNft]);
 
   // Фильтруем NFT, которые нужно отобразить
-  const filteredNftData =
-    nftData[0]?.nftItems?.filter(
-      (nft) => nft.verified && nft.trust !== "blacklist" && !nft?.owner?.is_scam
-    ) || [];
+ const filteredNftData =
+   nftData?.[0]?.nftItems?.filter(
+     (nft) => nft.verified && nft.trust !== "blacklist" && !nft.owner?.isScam
+   ) || [];
+
   
-console.log(filteredNftData, '👈👈 filteredNftData');
-  console.log(nftData, "👈👈 nftData");
+// console.log(filteredNftData, '👈👈 filteredNftData');
+//   console.log(nftData, "👈👈 nftData");
 
   return (
     <section className={styles["jettons-section"]}>
@@ -63,7 +64,7 @@ console.log(filteredNftData, '👈👈 filteredNftData');
                   <span
                     style={{
                       fontSize: "12px",
-                      color: el?.price?.diff_24h?.USD.includes("−")
+                      color: el?.price?.diff_24h?.USD?.includes("−")
                         ? "red"
                         : "green",
                     }}
@@ -136,7 +137,7 @@ console.log(filteredNftData, '👈👈 filteredNftData');
                 alt={nft.metadata.name}
                 className={styles["nft-list__image"]}
               />
-              <h3 className={styles["nft-list__name"]}>{nft.metadata.name}</h3>
+              <p className={styles["nft-list__name"]}>{nft.metadata.name}</p>
               {/* <p className={styles["nft-description"]}>
                 {nft.metadata.description}
               </p> */}
